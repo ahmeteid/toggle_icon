@@ -1,0 +1,87 @@
+:root {
+    --toggle-width: 52px;
+    --toggle-height: 25px;
+    --circle-margin: 3px;
+    --circle-width: 21px;
+    --timing-animation: .3s;
+    --color-gray: #c1c0c0;
+    --color-green: #83ea0d;
+
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: #00e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+}
+
+.toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    background-color: var(--color-gray);
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    transition: all var(--timing-animation);
+    -webkit-transition: all var(--timing-animation);
+    -moz-transition: all var(--timing-animation);
+    -ms-transition: all var(--timing-animation);
+    -o-transition: all var(--timing-animation);
+}
+
+.toggle--isActive {
+    background-color: var(--color-green);
+    box-shadow: 3px 3px 10px var(--color-green);
+}
+
+.toggle__text {
+    display: flex;
+    color: #eee;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.toggle__circle {
+    position: absolute;
+    width: var(--circle-width);
+    height: var(--circle-width);
+    background-color: #eee;
+    left: var(--circle-margin);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: var(--timing-animation);
+    -webkit-transition: var(--timing-animation);
+    -moz-transition: var(--timing-animation);
+    -ms-transition: var(--timing-animation);
+    -o-transition: var(--timing-animation);
+}
+
+.toggle--isActive .toggle__circle {
+    left: calc(var(--toggle-width) - var(--circle-width) - var(--circle-margin));
+    transition: var(--timing-animation);
+    -webkit-transition: var(--timing-animation);
+    -moz-transition: var(--timing-animation);
+    -ms-transition: var(--timing-animation);
+    -o-transition: var(--timing-animation);
+}
